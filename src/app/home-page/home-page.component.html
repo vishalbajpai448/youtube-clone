@@ -1,13 +1,15 @@
+<div>
 <app-header></app-header>
 <div class="container">
     <div class="video-thumbnails">
       <div *ngFor="let video of videos" class="video-thumbnail">
         <a [routerLink]="['/video', video.id.videoId]">
-            <img [src]="video.snippet.thumbnails.default.url" alt="{{ video.snippet.title }}">
+            <img [src]="video.snippet.thumbnails.maxres.url" alt="{{ video.snippet.title }}">
             <p class="video-title">{{ video.snippet.title }}</p>
-            <p class="channel-info">{{ video.snippet.channelTitle }}</p>
+            <!-- <p class="channel-info">{{ video.snippet.channelTitle }}</p> -->
           </a>
+          <p class="channel-information">{{video.snippet.channelTitle}}</p>
       </div>
     </div>
   </div>
-  
+</div>
